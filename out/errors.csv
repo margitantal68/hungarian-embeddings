@@ -1,0 +1,21 @@
+index,question,error_count,error_rate
+23,Milyen elvárás van a munkavégzéssel kapcsolatban?,7,0.875
+9,Mi jár vasárnapi és ünnepnapi munkára?,5,0.625
+5,Milyen szállodákban biztosít munkát a cég?,2,0.25
+15,Kiutazás előtt mit kell teljesíteni?,2,0.25
+26,Hogyan biztosítják a munkaegyenlőséget?,2,0.25
+39,Milyen személyazonosító okmány szükséges?,2,0.25
+48,Hol van a munkavállaló hivatalosan bejelentve?,2,0.25
+2,Hány magyar munkavállaló dolgozik jelenleg a cégnél?,1,0.125
+10,A magyar alapbér előleg?,1,0.125
+12,Milyen típusú lakásokban szállásolják el a dolgozókat?,1,0.125
+17,Ki biztosítja a nyelvoktatást?,1,0.125
+19,Milyen pozíciók érhetők el?,1,0.125
+24,Milyen egészségügyi állapot kizáró ok?,1,0.125
+25,Ki állapítja meg az egészségügyi alkalmasságot?,1,0.125
+28,Mennyi ideig tart a tréning?,1,0.125
+30,Ki fizeti a tréninget?,1,0.125
+35,Van lehetőség hétvégén hazautazni?,1,0.125
+38,Milyen munkaviszony szükséges az elmúlt egy évben?,1,0.125
+40,Milyen erkölcsi feltétel van?,1,0.125
+41,Hogyan kell felmondani a meglévő munkahelyen?,1,0.125
