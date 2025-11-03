@@ -82,6 +82,20 @@ This study presents the first comprehensive evaluation of state-of-the-art embed
 
 ## 3. Embedder Models
 
+| Model Name      | Model Identifier |
+|-----------------|------------------|
+| BGE-M3          | bge-m3 |
+| E5-BASE         | intfloat/multilingual-e5-base |
+| GEMINI          | gemini-embedding-001 |
+| HUBERT          | danieleff/hubert-base-cc-sentence-transformer |
+| NOMIC           | nomic-embed-text-v1 |
+| OPENAI-3SMALL   | text-embedding-3-small |
+| OPENAI-ADA      | text-embedding-ada-002 |
+| XLMROBERTA      | paraphrase-xlm-r-multilingual-v1 |
+
+**Model Characteristics:**
+
+
 | Model | Usage | Dimension | Sequence Length | Domain | Size |
 |-------|-------|-----------|-----------------|--------|------|
 | **BGE-M3** | SentenceTransformer - local | 1024 | 8192 tokens | Multilingual | ~560M |
@@ -104,7 +118,7 @@ This study presents the first comprehensive evaluation of state-of-the-art embed
 ### HuRTE Dataset
 - Hungarian adaptation of Recognizing Textual Entailment (RTE) from GLUE benchmark
 - 4,504 examples with premise-hypothesis pairs
-- Binary classification (entailment vs. non-entailment)
+- train: 2132 (1092 positive), validation: 243 (135 positive) samples
 - **Two evaluation types**:
   - *HuRTE-Positive*: Only positive examples in index and evaluation
   - *HuRTE-All*: All examples in index, positive examples in evaluation
@@ -158,10 +172,36 @@ This study presents the first comprehensive evaluation of state-of-the-art embed
  <img src="plots/model_efficiency.png" alt="Results" width="800"/>
 
 
+### Error Analysis - Clearservice dataset
 
+- **BGE-M3 model** 
+ <img src="figures/BGE-M3.png" alt="Results" width="800"/>
+
+- **OPENAI-3SMALL model**  
+ <img src="figures/OPENAI-3SMALL.png" alt="Results" width="800"/>
+
+ - **OPENAI-ADA model** 
+ <img src="figures/OPENAI-ADA.png" alt="Results" width="800"/>
+
+ - **XLMROBERTA model** 
+ <img src="figures/XLMROBERTA.png" alt="Results" width="800"/>
+  
+- **E5-BASE model** 
+ <img src="figures/E5-BASE.png" alt="Results" width="800"/>
+
+- **NOMIC model**   
+ <img src="figures/NOMIC.png" alt="Results" width="800"/>
+
+ - **HUBERTmodel** 
+ <img src="figures/HUBERT.png" alt="Results" width="800"/>
+
+ - **XLMROBERTA model** 
+ <img src="figures/XLMROBERTA.png" alt="Results" width="800"/>
 
 ### Key Findings
 
+
+- 
 - **BGE-M3** and **XLMROBERTA** achieved top performance on domain-specific Clearservice data (MRR: 0.90)
 - **GEMINI** demonstrated superior performance on HuRTE benchmark (MRR: 0.99)
 - **HUBERT** and **XLMROBERTA** offered best efficiency balance with low latency and quick index builds
