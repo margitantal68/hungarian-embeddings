@@ -328,11 +328,30 @@ def plot_rag_efficiency():
 
     # Create figure
     plt.figure(figsize=(10, 6))
-    scatter = plt.scatter(query_latency, mrr, s=sizes, alpha=0.7, c=mrr, cmap='viridis', edgecolor='k')
+    scatter = plt.scatter(query_latency, mrr, s=sizes, alpha=0.7, 
+                          c=mrr, cmap='viridis', edgecolor='k')
 
     # Add annotations for model names
     for i, model in enumerate(models):
-        plt.text(query_latency[i] * 1.02, mrr[i], model, fontsize=9, va='center')
+
+        # Default 10 px right
+        dx = 10
+        dy = 0
+
+        # Avoid overlapping for specific labels
+        if model == "XLMROBERTA":
+            dy = +8
+        if model == "BGE-M3":
+            dy = -8
+
+        plt.annotate(
+            model,
+            (query_latency[i], mrr[i]),
+            xytext=(dx, dy),
+            textcoords='offset points',
+            fontsize=9,
+            va='center'
+        )
 
     # Labels and title
     plt.title("Model Efficiency (Clearservice Dataset)", fontsize=14, fontweight='bold')
@@ -342,7 +361,8 @@ def plot_rag_efficiency():
 
     # Legend for bubble sizes
     for size, label in zip([0.5, 1.0, 1.5], ['0.5 s', '1.0 s', '1.5 s']):
-        plt.scatter([], [], s=size*300, c='gray', alpha=0.4, label=f'Index build time: {label}')
+        plt.scatter([], [], s=size*300, c='gray', alpha=0.4, 
+                    label=f'Index build time: {label}')
     plt.legend(frameon=True, loc='lower right', title='Bubble Size')
 
     # Colorbar
@@ -353,6 +373,7 @@ def plot_rag_efficiency():
     plt.show()
 
 
+
 # plot_recall_at_3_clearservice()
 # plot_recall_at_3_hurte()
 # plot_model_comparison()
@@ -360,7 +381,7 @@ def plot_rag_efficiency():
 # plot_hurte_all_recall1()
 # plot_hurte_all_mrr()
 # plot_model_performance()
-# plot_rag_efficiency()
+plot_rag_efficiency()
 # plot_mrr_clearservice()
 # plot_mrr_hurte()
-plot_hurte_all_mrr()
+# plot_hurte_all_mrr()
